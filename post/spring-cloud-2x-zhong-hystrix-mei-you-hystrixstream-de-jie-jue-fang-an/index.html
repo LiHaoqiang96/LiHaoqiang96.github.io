@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>文章归档 | Li Haoqiang</title>
+<title>Spring Cloud 2.X中Hystrix没有hystrix.stream的解决方案 | Li Haoqiang</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -13,6 +13,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://LiHaoqiang96.github.io/styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -91,47 +97,59 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          
+          <div class="post-detail">
+            <h2 class="post-title">Spring Cloud 2.X中Hystrix没有hystrix.stream的解决方案</h2>
+            <div class="post-date">2019-05-20</div>
+            
+              <div class="feature-container" style="background-image: url('https://LiHaoqiang96.github.io/post-images/spring-cloud-2x-zhong-hystrix-mei-you-hystrixstream-de-jie-jue-fang-an.png')">
+              </div>
+            
+            <div class="post-content">
+              <h2 id="第一步在启动类上面添加注解">第一步：在启动类上面添加注解</h2>
+<p><code>@EnableCircuitBreaker</code>
+表示开启熔断器</p>
+<h2 id="第二步在启动类中添加如下代码">第二步：在启动类中添加如下代码</h2>
+<pre><code class="language-@Bean">    public ServletRegistrationBean getServlet(){
 
-          <h2 class="archives-title">文章归档</h2>
-          <div class="archives-container">
+        HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();
+        ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);
+        registrationBean.setLoadOnStartup(1);  //系统启动时加载顺序
+        registrationBean.addUrlMappings(&quot;/hystrix.stream&quot;);//路径
+        registrationBean.setName(&quot;HystrixMetricsStreamServlet&quot;);
+        return registrationBean;
+    }
+		```</code></pre>
+
+            </div>
             
-              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2019</h2>
+              <div class="tag-container">
+                
+                  <a href="https://LiHaoqiang96.github.io/tag/gridea" class="tag">
+                    Gridea
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://LiHaoqiang96.github.io/post/hello-gridea">
+                  <h3 class="post-title">
+                    Hello Gridea
+                  </h3>
+                </a>
+              </div>
+            
+
+            
               
-                
-                  <article class="post">
-                    <a href="https://LiHaoqiang96.github.io/post/spring-cloud-2x-zhong-hystrix-mei-you-hystrixstream-de-jie-jue-fang-an">
-                      <h2 class="post-title">
-                        Spring Cloud 2.X中Hystrix没有hystrix.stream的解决方案
-                      </h2>
-                    </a>
-                  </article>
-                
+                <div id="gitalk-container" data-aos="fade-in"></div>
               
-                
+
               
             
-              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2018</h2>
-              
-                
-              
-                
-                  <article class="post">
-                    <a href="https://LiHaoqiang96.github.io/post/hello-gridea">
-                      <h2 class="post-title">
-                        Hello Gridea
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-            
+
           </div>
-
-          <div class="pagination-container">
-  
-  
-</div>
 
         </div>
       </div>
@@ -153,6 +171,29 @@ var app = new Vue({
 })
 
 </script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '4121639415f065d99c6b',
+        clientSecret: 'fa7423fdc6df81a6dbbd236d59288ea07a7c620e',
+        repo: 'LiHaoqiang96.github.io',
+        owner: 'LiHaoqiang96',
+        admin: ['LiHaoqiang96'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
