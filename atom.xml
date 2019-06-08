@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://LiHaoqiang96.github.io</id>
     <title>Li Haoqiang</title>
-    <updated>2019-06-08T09:32:37.902Z</updated>
+    <updated>2019-06-08T09:34:11.519Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://LiHaoqiang96.github.io"/>
     <link rel="self" href="https://LiHaoqiang96.github.io/atom.xml"/>
@@ -20,7 +20,8 @@
 <p><code>@EnableCircuitBreaker</code>
 表示开启熔断器</p>
 <h2 id="第二步在启动类中添加如下代码">第二步：在启动类中添加如下代码</h2>
-<pre><code class="language-@Bean">    public ServletRegistrationBean getServlet(){
+<pre><code>@Bean
+    public ServletRegistrationBean getServlet(){
 
         HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();
         ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);
@@ -28,7 +29,8 @@
         registrationBean.addUrlMappings(&quot;/hystrix.stream&quot;);//路径
         registrationBean.setName(&quot;HystrixMetricsStreamServlet&quot;);
         return registrationBean;
-    }</code></pre>
+    }
+</code></pre>
 ]]></content>
     </entry>
     <entry>
