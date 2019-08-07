@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>文章归档 | Li Haoqiang</title>
+<title>POI-地点检索服务 | Li Haoqiang</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -13,6 +13,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://LiHaoqiang96.github.io/styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -91,59 +97,49 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          
+          <div class="post-detail">
+            <h2 class="post-title">POI-地点检索服务</h2>
+            <div class="post-date">2019-08-07</div>
+            
+            <div class="post-content">
+              <hr>
+<blockquote>
+<p><a href="http://lbsyun.baidu.com/index.php?title=webapi/guide/webservice-placeapi">Web服务API | 百度地图API SDK：地点检索服务</a></p>
+<p><img src="http://mapopen-pub-webserviceapi.bj.bcebos.com/images/place2.png" alt="地点检索服务" title="地点检索服务"></p>
+</blockquote>
+<h3 id="1-poi数据挖掘httpwikilianjiacompagesviewpageactionpageid325043200">1. POI数据挖掘：http://wiki.lianjia.com/pages/viewpage.action?pageId=325043200</h3>
+<h3 id="2-接口">2. 接口</h3>
+<h3 id="3-记录">3. 记录</h3>
+<h3 id="4-查询当前正在处理的数据-id">4. 查询当前正在处理的数据 id</h3>
+<pre><code>grep &quot;Query data with id&quot; http.log | tail -1
+</code></pre>
+<hr>
+<h3 id="5-状态码说明文档">5. 状态码说明文档</h3>
+<hr>
+<h3 id="6-新百度poi项目点我查看">6. <a href="http://wiki.lianjia.com/pages/viewpage.action?pageId=327343842">新百度POI项目(点我查看)</a></h3>
+<hr>
 
-          <h2 class="archives-title">文章归档</h2>
-          <div class="archives-container">
+            </div>
             
-              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2019</h2>
+              <div class="tag-container">
+                
+                  <a href="https://LiHaoqiang96.github.io/tag/BpD7Rsu6-" class="tag">
+                    KeProjects
+                  </a>
+                
+              </div>
+            
+            
+
+            
               
-                
-                  <article class="post">
-                    <a href="https://LiHaoqiang96.github.io/post/spring-cloud-2x-zhong-hystrix-mei-you-hystrixstream-de-jie-jue-fang-an">
-                      <h2 class="post-title">
-                        Spring Cloud 2.X中Hystrix没有hystrix.stream的解决方案
-                      </h2>
-                    </a>
-                  </article>
-                
+                <div id="gitalk-container" data-aos="fade-in"></div>
               
-                
-                  <article class="post">
-                    <a href="https://LiHaoqiang96.github.io/post/centos-fu-wu-qi-an-zhuang-redis-bing-pei-zhi-yuan-cheng-lian-jie">
-                      <h2 class="post-title">
-                        CentOS服务器安装Redis并配置远程连接
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
+
               
             
-              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2018</h2>
-              
-                
-              
-                
-              
-                
-                  <article class="post">
-                    <a href="https://LiHaoqiang96.github.io/post/hello-gridea">
-                      <h2 class="post-title">
-                        Hello Gridea
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-            
+
           </div>
-
-          <div class="pagination-container">
-  
-  
-</div>
 
         </div>
       </div>
@@ -165,6 +161,29 @@ var app = new Vue({
 })
 
 </script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '4121639415f065d99c6b',
+        clientSecret: 'fa7423fdc6df81a6dbbd236d59288ea07a7c620e',
+        repo: 'LiHaoqiang96.github.io',
+        owner: 'LiHaoqiang96',
+        admin: ['LiHaoqiang96'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://LiHaoqiang96.github.io</id>
     <title>Li Haoqiang</title>
-    <updated>2019-07-10T10:48:20.053Z</updated>
+    <updated>2019-08-07T09:07:57.846Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://LiHaoqiang96.github.io"/>
     <link rel="self" href="https://LiHaoqiang96.github.io/atom.xml"/>
@@ -17,7 +17,7 @@
         </link>
         <updated>2019-05-20T09:20:00.000Z</updated>
         <content type="html"><![CDATA[<h2 id="第一步在启动类上面添加注解">第一步：在启动类上面添加注解</h2>
-<p><code>@EnableCircuitBreaker</code>
+<p><code>@EnableCircuitBreaker</code><br>
 表示开启熔断器</p>
 <h2 id="第二步在启动类中添加如下代码">第二步：在启动类中添加如下代码</h2>
 <pre><code>		@Bean
@@ -54,9 +54,9 @@
 <h5 id="2指定redisconf文件启动-redis-server-usrlocalredis-406redisconf">2.指定redis.conf文件启动    ./redis-server /usr/local/redis-4.0.6/redis.conf</h5>
 <h5 id="3关闭redis进程首先使用-ps-aux-grep-redis-查看redis进程找到6379端口号对应的进程号-kill-9-3344">3.关闭redis进程首先使用  ps -aux | grep redis  查看redis进程,找到6379端口号对应的进程号   kill -9 3344</h5>
 <h5 id="4设置redis开机自启动">4.设置redis开机自启动</h5>
-<p>####### 1）在/etc目录下新建redis目录    mkdir redis
-####### 2）将/usr/local/redis-4.0.6/redis.conf 文件复制一份到/etc/redis目录下，并命名为6379.conf    cp /usr/local/redis-4.0.6/redis.conf /etc/redis/6379.conf
-####### 3）将redis的启动脚本复制一份放到/etc/init.d目录下       cp /usr/local/redis-4.0.6/utils/redis_init_script /etc/init.d/redisd
+<p>####### 1）在/etc目录下新建redis目录    mkdir redis<br>
+####### 2）将/usr/local/redis-4.0.6/redis.conf 文件复制一份到/etc/redis目录下，并命名为6379.conf    cp /usr/local/redis-4.0.6/redis.conf /etc/redis/6379.conf<br>
+####### 3）将redis的启动脚本复制一份放到/etc/init.d目录下       cp /usr/local/redis-4.0.6/utils/redis_init_script /etc/init.d/redisd<br>
 ####### 4）切换到/etc/init.d目录下，然后执行自启命令    chkconfig redisd on如果失败表示redisd不支持chkconfig解决方法：使用vim编辑redisd文件，在第一行加入如下两行注释，保存退出# chkconfig:   2345 90 10# description:  Redis is a persistent key-value database注释的意思是，redis服务必须在运行级2，3，4，5下被启动或关闭，启动的优先级是90，关闭的优先级是10。再次执行自启命令就会成功    chkconfig redisd on现在可以直接已服务的形式启动和关闭redis了启动：service redisd start关闭：service redisd stop</p>
 <h2 id="三-设置外网访问">三、设置外网访问</h2>
 <h5 id="1编辑redisconf文件-vim-redisconf">1.编辑redis.conf文件   vim redis.conf</h5>
@@ -67,7 +67,7 @@
 <h5 id="2开放防火墙的redis端口6379-iptables-i-input-4-p-tcp-m-state-state-new-m-tcp-dport-6379-j-accept-service-iptables-save-保存iptables规则-iptables-nvl-查看iptables表的规则修改后杀掉进程重启服务">2.开放防火墙的redis端口6379 iptables -I INPUT 4 -p tcp -m state --state NEW -m tcp --dport 6379 -j ACCEPT service iptables save     #保存iptables规则 iptables -nvL    #查看iptables表的规则修改后杀掉进程，重启服务。</h5>
 <h5 id="3添加阿里云安全组规则开放6379端口">3.添加阿里云安全组规则，开放6379端口</h5>
 <h5 id="4远程连接测试">4.远程连接测试</h5>
-<p>####### 方法1）windows下   win+r  输入cmd进入控制台 输入    telnet 47.92.xx.xx 6379  进入空白页表示连接成功，显示无telnet命令的话，百度：win10启动telnet教程
+<p>####### 方法1）windows下   win+r  输入cmd进入控制台 输入    telnet 47.92.xx.xx 6379  进入空白页表示连接成功，显示无telnet命令的话，百度：win10启动telnet教程<br>
 ####### 方法2）另一台liunx系统的命令行中输入  redis-cli -h 47.92.xx.xx -p 6379出现47.92.xx.xx:6379&gt;  表示成功</p>
 ]]></content>
     </entry>
