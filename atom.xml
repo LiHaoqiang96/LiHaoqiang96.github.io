@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://LiHaoqiang96.github.io</id>
     <title>Li Haoqiang</title>
-    <updated>2019-08-07T09:09:11.981Z</updated>
+    <updated>2019-08-07T09:10:34.483Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://LiHaoqiang96.github.io"/>
     <link rel="self" href="https://LiHaoqiang96.github.io/atom.xml"/>
@@ -10,30 +10,6 @@
     <logo>https://LiHaoqiang96.github.io/images/avatar.png</logo>
     <icon>https://LiHaoqiang96.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Li Haoqiang</rights>
-    <entry>
-        <title type="html"><![CDATA[POI-地点检索服务]]></title>
-        <id>https://LiHaoqiang96.github.io/post/poi-di-dian-jian-suo-fu-wu</id>
-        <link href="https://LiHaoqiang96.github.io/post/poi-di-dian-jian-suo-fu-wu">
-        </link>
-        <updated>2019-08-07T09:03:59.000Z</updated>
-        <content type="html"><![CDATA[<hr>
-<blockquote>
-<p><a href="http://lbsyun.baidu.com/index.php?title=webapi/guide/webservice-placeapi">Web服务API | 百度地图API SDK：地点检索服务</a></p>
-<p><img src="http://mapopen-pub-webserviceapi.bj.bcebos.com/images/place2.png" alt="地点检索服务" title="地点检索服务"></p>
-</blockquote>
-<h3 id="1-poi数据挖掘httpwikilianjiacompagesviewpageactionpageid325043200">1. POI数据挖掘：http://wiki.lianjia.com/pages/viewpage.action?pageId=325043200</h3>
-<h3 id="2-接口">2. 接口</h3>
-<h3 id="3-记录">3. 记录</h3>
-<h3 id="4-查询当前正在处理的数据-id">4. 查询当前正在处理的数据 id</h3>
-<pre><code>grep &quot;Query data with id&quot; http.log | tail -1
-</code></pre>
-<hr>
-<h3 id="5-状态码说明文档">5. 状态码说明文档</h3>
-<hr>
-<h3 id="6-新百度poi项目点我查看">6. <a href="http://wiki.lianjia.com/pages/viewpage.action?pageId=327343842">新百度POI项目(点我查看)</a></h3>
-<hr>
-]]></content>
-    </entry>
     <entry>
         <title type="html"><![CDATA[Spring Cloud 2.X中Hystrix没有hystrix.stream的解决方案]]></title>
         <id>https://LiHaoqiang96.github.io/post/spring-cloud-2x-zhong-hystrix-mei-you-hystrixstream-de-jie-jue-fang-an</id>
