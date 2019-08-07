@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Spring Cloud 2.X中Hystrix没有hystrix.stream的解决方案 | Li Haoqiang</title>
+<title>KeProjects | Li Haoqiang</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -13,12 +13,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://LiHaoqiang96.github.io/styles/main.css">
 
-
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
-
-  
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -97,60 +91,28 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">Spring Cloud 2.X中Hystrix没有hystrix.stream的解决方案</h2>
-            <div class="post-date">2019-05-20</div>
-            
-              <div class="feature-container" style="background-image: url('https://LiHaoqiang96.github.io/post-images/spring-cloud-2x-zhong-hystrix-mei-you-hystrixstream-de-jie-jue-fang-an.png')">
-              </div>
-            
-            <div class="post-content">
-              <h2 id="第一步在启动类上面添加注解">第一步：在启动类上面添加注解</h2>
-<p><code>@EnableCircuitBreaker</code><br>
-表示开启熔断器</p>
-<h2 id="第二步在启动类中添加如下代码">第二步：在启动类中添加如下代码</h2>
-<pre><code>		@Bean
-    public ServletRegistrationBean getServlet(){
-
-        HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();
-        ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);
-        registrationBean.setLoadOnStartup(1);  //系统启动时加载顺序
-        registrationBean.addUrlMappings(&quot;/hystrix.stream&quot;);//路径
-        registrationBean.setName(&quot;HystrixMetricsStreamServlet&quot;);
-        return registrationBean;
-    }
-</code></pre>
-
-            </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://LiHaoqiang96.github.io/tag/1eqIjYu2i" class="tag">
-                    技术
-                  </a>
-                
-              </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://LiHaoqiang96.github.io/post/centos-fu-wu-qi-an-zhuang-redis-bing-pei-zhi-yuan-cheng-lian-jie">
-                  <h3 class="post-title">
-                    CentOS服务器安装Redis并配置远程连接
-                  </h3>
+          <h2 class="current-tag">标签: KeProjects</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://LiHaoqiang96.github.io/post/poi-di-dian-jian-suo-fu-wu">
+                  <h2 class="post-title">POI-地点检索服务</h2>
                 </a>
+                <div class="post-date">
+                  2019-08-07
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
               </div>
-            
-
-            
               
-                <div id="gitalk-container" data-aos="fade-in"></div>
-              
+            </article>
+          
 
-              
-            
-
-          </div>
+          <div class="pagination-container">
+  
+  
+</div>
 
         </div>
       </div>
@@ -172,29 +134,6 @@ var app = new Vue({
 })
 
 </script>
-
-
-
-  
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <script>
-
-      var gitalk = new Gitalk({
-        clientID: '4121639415f065d99c6b',
-        clientSecret: 'fa7423fdc6df81a6dbbd236d59288ea07a7c620e',
-        repo: 'LiHaoqiang96.github.io',
-        owner: 'LiHaoqiang96',
-        admin: ['LiHaoqiang96'],
-        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
-
-      gitalk.render('gitalk-container')
-
-    </script>
-  
-
-  
 
 
 
